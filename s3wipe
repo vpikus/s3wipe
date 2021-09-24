@@ -193,8 +193,6 @@ def main():
         logger.error(shortErr)
         sys.exit(1)
 
-    mybucket.configure_versioning(True)
-
     # Poll the root-level directories in the s3 bucket, and
     # start a reader process for each one of them
     subDirs = list(mybucket.list_versions(prefix=path, delimiter="/"))
