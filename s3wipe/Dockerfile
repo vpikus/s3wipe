@@ -11,6 +11,6 @@ RUN pip install --user --no-cache-dir boto
 
 COPY --chown=s3wipe:s3wipe . ./
 
-RUN chmod 755 s3wipe
+RUN chmod 744 s3wipe
 
 ENTRYPOINT ["./s3wipe"]

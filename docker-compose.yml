@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  s3wipe:
+    build: ./s3wipe
+    container_name: s3wipe
+    environment:
+      ACCESS_KEY: '<INSERT ACCESS KEY>'
+      SECRET_KEY: '<INSERT SECRET KEY>'
+      S3_PATH: '<INSERT PASS KEY>'
