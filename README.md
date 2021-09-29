@@ -52,11 +52,6 @@ Then:
 
 ### Using Docker
 
-Clone the repo:
-
-    git clone git@github.com:eschwim/s3wipe.git
-    cd s3wipe
-
 Build the Docker image:
 
     docker build -t s3wipe:latest .
@@ -68,16 +63,17 @@ Then run the script:
 ## Usage
 
 ```
-usage: s3wipe [-h] --path PATH --id ID --key KEY [--dryrun] [--quiet]
-              [--batchsize BATCHSIZE] [--maxqueue MAXQUEUE] [--delbucket]
+usage: s3wipe [-h] --s3_path PATH --s3_access_key ID --s3_secret_key KEY [--s3_host HOST]
+              [--dryrun] [--quiet] [--batchsize BATCHSIZE] [--maxqueue MAXQUEUE] [--delbucket]
 
 Recursively delete all keys in an S3 path
 
 optional arguments:
   -h, --help             show this help message and exit
-  --path PATH            S3 path to delete (e.g. s3://bucket/path)
-  --id ID                Your AWS access key ID
-  --key KEY              Your AWS secret access key
+  --s3_path PATH         S3 path to delete (e.g. s3://bucket/path)
+  --s3_access_key ID     Your AWS access key ID
+  --s3_secret_key KEY    Your AWS secret access key
+  --s3_host HOST         Your AWS provider host (e.g. s3.amazonaws.com)
   --dryrun               Don't delete. Print what we would have deleted
   --quiet                Suprress all non-error output
   --batchsize BATCHSIZE  # of keys to batch delete (default 100)
